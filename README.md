@@ -5,7 +5,7 @@
 
 This project follows the principle of data processing **Separates Concerns**
 
-[Separates Concerns](./images/spark-sep-con.png)
+![Separates Concerns](./images/spark-sep-con.png)
 
 **Input and Output** are defined in storage package `co.omise.spark.storage`. This area is an action execution
 
