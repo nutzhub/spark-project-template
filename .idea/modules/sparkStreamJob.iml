@@ -1,19 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<module external.linked.project.id="sparkJob [file:/Users/pradit/omise.co/spark-project-template/]" external.linked.project.path="$MODULE_DIR$/../../spark-job" external.root.project.path="$MODULE_DIR$/../.." external.system.id="SBT" type="JAVA_MODULE" version="4">
+<module type="JAVA_MODULE" version="4">
   <component name="NewModuleRootManager" LANGUAGE_LEVEL="JDK_11">
-    <output url="file://$MODULE_DIR$/../../spark-job/target/scala-2.12/classes" />
-    <output-test url="file://$MODULE_DIR$/../../spark-job/target/scala-2.12/test-classes" />
+    <output url="file://$MODULE_DIR$/../../sparkStreamJob/target/scala-2.12/classes" />
+    <output-test url="file://$MODULE_DIR$/../../sparkStreamJob/target/scala-2.12/test-classes" />
     <exclude-output />
-    <content url="file://$MODULE_DIR$/../../spark-job">
-      <sourceFolder url="file://$MODULE_DIR$/../../spark-job/src/main/resources" type="java-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/../../spark-job/src/main/scala" isTestSource="false" />
-      <sourceFolder url="file://$MODULE_DIR$/../../spark-job/src/test/resources" type="java-test-resource" />
-      <sourceFolder url="file://$MODULE_DIR$/../../spark-job/src/test/scala" isTestSource="true" />
-      <excludeFolder url="file://$MODULE_DIR$/../../spark-job/target" />
+    <content url="file://$MODULE_DIR$/../../sparkStreamJob">
+      <excludeFolder url="file://$MODULE_DIR$/../../sparkStreamJob/target" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="common" exported="" />
     <orderEntry type="library" scope="PROVIDED" name="sbt: aopalliance:aopalliance:1.0:jar" level="project" />
     <orderEntry type="library" name="sbt: ch.qos.logback:logback-classic:1.2.3:jar" level="project" />
     <orderEntry type="library" name="sbt: ch.qos.logback:logback-core:1.2.3:jar" level="project" />
@@ -209,5 +204,6 @@
     <orderEntry type="library" scope="PROVIDED" name="sbt: xerces:xercesImpl:2.9.1:jar" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="sbt: xml-apis:xml-apis:1.3.04:jar" level="project" />
     <orderEntry type="library" scope="PROVIDED" name="sbt: xmlenc:xmlenc:0.52:jar" level="project" />
+    <orderEntry type="module" module-name="sharedLib" exported="" />
   </component>
 </module>

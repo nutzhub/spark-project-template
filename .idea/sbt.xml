@@ -7,7 +7,10 @@
         <option name="modules">
           <set>
             <option value="$PROJECT_DIR$" />
+            <option value="$PROJECT_DIR$/common" />
             <option value="$PROJECT_DIR$/project" />
+            <option value="$PROJECT_DIR$/spark-job" />
+            <option value="$PROJECT_DIR$/spark-stream-job" />
           </set>
         </option>
         <option name="sbtVersion" value="1.4.7" />

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ScalaCompilerConfiguration">
-    <profile name="sbt 1" modules="root,spark-job,spark-project-template" />
+    <profile name="sbt 1" modules="common,root,shared-lib,shared-library,sharedLib,spark-job,spark-project-template,spark-stream-job,sparkJob,sparkJob.spark-job,sparkStreamJob" />
   </component>
 </project>
