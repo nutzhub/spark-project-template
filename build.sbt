@@ -9,7 +9,6 @@ lazy val root = project
     // Must run Spark tests sequentially because they compete for port 4040!
     parallelExecution in Test := false,
     testForkedParallel in Test := false,
-    testForkedParallel in IntegrationTest := false,
     fork in Test := true,
     // Scoverage settings
     coverageExcludedPackages := "<empty>;.*storage.*;.*transform.*;",
