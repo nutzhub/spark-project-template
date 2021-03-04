@@ -14,6 +14,54 @@ This project follows the principle of data processing **Separates Concerns**
 
 ## How to use this project as spark template
 
+Main function snippet
+
+```scala
+object ChargesJob extends SparkJobTrait with StrictLogging {
+  override def main(args: Array[String]): Unit = {
+    // Spark session instanciate
+    implicit val spark: SparkSession = acquireSparkSession()
+    spark.sparkContext.setLogLevel("WARN")
+
+    logger.info(s"Start $jobName")
+    // Declare DataFrame reader and writer
+    val reader: Reader = new StorageImpl
+    val writer: Writer = new StorageImpl
+    
+    // Read source file
+    val df =
+      reader.read(Seq("test-data/charge_txn.json"), Format.Json, schema = None, "multiLine" -> "true")
+
+    /** Transformation area */
+    val aggDf = ChargeAmountAggregate(df)
+
+    /** End */
+    // Read source file
+    writer.write(aggDf, Format.Json, SaveMode.Overwrite, "test-result")
+    logger.info(s"End $jobName")
+    spark.close()
+  }
+
+  override def jobName: String = "charges-amount-aggregation"
+}
+
+```
+
+Transformation Snippet
+
+```scala
+object ChargeAmountAggregate extends TransformerTrait with StrictLogging {
+  def apply(df: DataFrame)(implicit spark: SparkSession): DataFrame = {
+    import org.apache.spark.sql.functions._
+    import spark.implicits._
+    df
+      .select("backend_name", "charged_amount")
+      .filter($"captured" === "true")
+      .groupBy($"backend_name")
+      .agg(sum($"charged_amount") as "sum_charged_amount")
+  }
+}
+```
 
 ## Essential sbt command
 
